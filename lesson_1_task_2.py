@@ -1,4 +1,4 @@
-print('Enter number of seconds (0 < seconds < 86 400): ',end='')
+print('Enter number of seconds (0 < seconds < 86 400): ', end='')
 number = int(input())
 
 if int(number // 3600) <= 9:

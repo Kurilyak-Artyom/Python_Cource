@@ -1,4 +1,4 @@
-print('Enter integer number: ',end='')
+print('Enter integer number: ', end='')
 n = int(input())
 max_digit = 0
 

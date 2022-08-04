@@ -1,8 +1,5 @@
-print('Enter value of A: ',  end='')
-a = int(input())
-
-print('Enter value of B: ', end='')
-b = int(input())
+a = int(input('Enter value of A: '))
+b = int(input('Enter value of B: '))
 
 the_day = 1
 
