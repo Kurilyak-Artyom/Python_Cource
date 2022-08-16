@@ -3,7 +3,11 @@
 Об  окончании  ввода  данных  будет  свидетельствовать  пустая строка. 
 """
 
-f_obj = open(r"D:\test_data\data1.txt", 'w')
+from pathlib import Path
+
+the_path = Path(Path.cwd(), 'test_data','docs.txt')
+
+f_obj = open(the_path, 'w')
 cur_string = 'data'
 
 while cur_string != '':

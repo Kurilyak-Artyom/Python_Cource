@@ -3,7 +3,11 @@
 выполнить подсчёт строк и слов в каждой строке.
 """
 
-f_obj = open(r"D:\test_data\data2.txt", 'r')
+from pathlib import Path
+
+the_path = Path(Path.cwd(), 'test_data','data2.txt')
+
+f_obj = open(the_path, 'r')
 line_number = 1
 
 for line in f_obj:

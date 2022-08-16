@@ -9,7 +9,12 @@
 
 """
 
-f_obj = open(r"D:\test_data\data6.txt", 'r', encoding='utf-8')
+from pathlib import Path
+
+the_path = Path(Path.cwd(), 'test_data', 'data6.txt')
+
+f_obj = open(the_path, encoding='utf-8')
+
 subjects_dict = {}
 subject_name = ''
 subject_lectures = 0
@@ -32,18 +37,22 @@ subject_laboratory_lessons = 0
 Аналогичными приемами извлекаем количество лекций, практический занятий и лабораторных работ из каждой строки
 """
 for line in f_obj:
+
     # Extracting subject name
     subject_name = ' '.join(line.split()[::-1][3:][::-1])[0:-1]
+    
     # Extracting subject laboratory lessons count
     try:
         subject_laboratory_lessons = int(line.split()[::-1][0][::-1][5:][::-1])
     except:
         subject_laboratory_lessons = 0
+    
     # Extracting subject practical lessons count
     try:
         subject_practical_lessons = int(line.split()[::-1][1][::-1][4:][::-1])
     except:
         subject_practical_lessons = 0
+    
     # Extracting subject lectures count
     try:
         subject_lectures = int(line.split()[::-1][2][::-1][3:][::-1])

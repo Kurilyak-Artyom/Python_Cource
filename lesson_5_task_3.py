@@ -10,7 +10,11 @@
 Петров 13749.32 
 """
 
-f_obj = open(r"D:\test_data\data3.txt", 'r', encoding='utf-8')
+from pathlib import Path
+
+the_path = Path(Path.cwd(), 'test_data', 'data3.txt')
+
+f_obj = open(the_path, 'r', encoding='utf-8')
 staff_count = 0
 salary_sum = 0
 
@@ -22,4 +26,5 @@ for line in f_obj:
 
 print(f"Средний оклад сотрудников равен {salary_sum / staff_count:.2f}")
 f_obj.close()
+
 

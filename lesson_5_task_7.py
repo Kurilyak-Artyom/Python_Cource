@@ -23,6 +23,10 @@
 """
 
 from json import dump
+from pathlib import Path
+
+the_path = Path(Path.cwd(), 'test_data', 'data7.txt')
+the_path_2 = Path(Path.cwd(), 'test_data', 'result7.txt')
 
 profit_making_firms = {}
 firms_with_losses = {}
@@ -31,7 +35,7 @@ result_list = []
 profit_making_firms_count = 0
 profit_sum = 0
 
-with open(r"D:\test_data\data7.txt", 'r', encoding='utf-8') as f_obj:
+with open(the_path, 'r', encoding='utf-8') as f_obj:
     for line in f_obj:
         if int(line.split()[2]) >= int(line.split()[3]):
             profit_making_firms.update({line.split()[0]: int(line.split()[2]) - int(line.split()[3])})
@@ -51,6 +55,6 @@ if len(firms_with_losses) > 0:
     result_list.append(firms_with_losses)
 result_list.append(average_profit)
 
-with open(r"D:\test_data\result7.txt", 'w', encoding='utf-8') as f_obj_2:
+with open(the_path_2, 'w', encoding='utf-8') as f_obj_2:
     dump(result_list, f_obj_2)
 

@@ -12,8 +12,13 @@ Four — 4
 
 """
 
-input_f_obj = open(r"D:\test_data\data4.txt", 'r')
-output_f_obj = open(r"D:\test_data\result_data4.txt", 'w', encoding='utf-8')
+from pathlib import Path
+
+the_path = Path(Path.cwd(), 'test_data', 'data4.txt')
+the_path_2 = Path(Path.cwd(), 'test_data', 'result_data4.txt')
+
+input_f_obj = open(the_path, 'r')
+output_f_obj = open(the_path_2, encoding='utf-8')
 change_srt = {1: "Один", 2: "Два", 3: "Три", 4: "Четыре"}
 
 for line in input_f_obj:
